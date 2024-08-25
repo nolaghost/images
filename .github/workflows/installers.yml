@@ -13,7 +13,7 @@ on:
 
 jobs:
   pushMultiArch:
-    name: "yolks:installers_multiarch:${{ matrix.tag }}"
+    name: "images:installers_multiarch:${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -41,10 +41,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/pterodactyl/installers:${{ matrix.tag }}
+            ghcr.io/nolaghost/installers:${{ matrix.tag }}
 
   pushAmd:
-    name: "yolks:installers_amd:${{ matrix.tag }}"
+    name: "images:installers_amd:${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -69,4 +69,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/pterodactyl/installers:${{ matrix.tag }}
+            ghcr.io/nolaghost/installers:${{ matrix.tag }}
